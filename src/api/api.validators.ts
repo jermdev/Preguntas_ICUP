@@ -31,12 +31,12 @@ const VALID_FREQUENCIES = new Set<QuestionFrequency>([
 
 // ── Type Guards ──────────────────────────────────────────────
 
-function isValidQuestionType(value: string): value is QuestionType {
-  return VALID_TYPES.has(value as QuestionType);
+function isValidQuestionType(value: unknown): value is QuestionType {
+  return typeof value === 'string' && (VALID_TYPES as Set<string>).has(value);
 }
 
-function isValidFrequency(value: string): value is QuestionFrequency {
-  return VALID_FREQUENCIES.has(value as QuestionFrequency);
+function isValidFrequency(value: unknown): value is QuestionFrequency {
+  return typeof value === 'string' && (VALID_FREQUENCIES as Set<string>).has(value);
 }
 
 function isRawApiQuestion(value: unknown): value is RawApiQuestion {
@@ -131,25 +131,23 @@ export function normalizeQuestion(raw: RawApiQuestion): NormalizedQuestion {
   const rawType = raw[API_FIELD_TYPE];
   const rawFreq = raw[API_FIELD_FREQUENCY];
 
-  const type: QuestionType = isValidQuestionType(rawType)
-    ? rawType
-    : (() => {
-      console.warn(
-        `[API] Tipo de pregunta desconocido: "${rawType}". ` +
-        'Se usará "Otros" como fallback.',
-      );
-      return "Otros";
-    })();
+  let type: QuestionType = 'Otros';
+  if (isValidQuestionType(rawType)) {
+    type = rawType;
+  } else {
+    console.warn(
+      `[API] Tipo de pregunta desconocido: "${rawType}". Se usará "Otros" como fallback.`,
+    );
+  }
 
-  const frequency: QuestionFrequency = isValidFrequency(rawFreq)
-    ? rawFreq
-    : (() => {
-      console.warn(
-        `[API] Frecuencia desconocida: "${rawFreq}". ` +
-        'Se usará "Pocas veces" como fallback.',
-      );
-      return "Pocas veces";
-    })();
+  let frequency: QuestionFrequency = 'Pocas veces';
+  if (isValidFrequency(rawFreq)) {
+    frequency = rawFreq;
+  } else {
+    console.warn(
+      `[API] Frecuencia desconocida: "${rawFreq}". Se usará "Pocas veces" como fallback.`,
+    );
+  }
 
   return {
     id: raw.id_respuesta,
