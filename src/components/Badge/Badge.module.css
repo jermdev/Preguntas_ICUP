@@ -1,0 +1,77 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  font-weight: 500;
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+  line-height: 1;
+}
+
+.badgeSm {
+  padding: 0.25rem 0.55rem;
+  font-size: 0.725rem;
+}
+
+.badgeMd {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+}
+
+.icon {
+  width: 0.875rem;
+  height: 0.875rem;
+  flex-shrink: 0;
+}
+
+/* Tipos */
+.typeMultiple {
+  background-color: var(--badge-type-multiple-bg);
+  color: var(--badge-type-multiple-text);
+  border-color: var(--badge-type-multiple-border);
+}
+
+.typeOpen {
+  background-color: var(--badge-type-open-bg);
+  color: var(--badge-type-open-text);
+  border-color: var(--badge-type-open-border);
+}
+
+.typeBoolean {
+  background-color: var(--badge-type-boolean-bg);
+  color: var(--badge-type-boolean-text);
+  border-color: var(--badge-type-boolean-border);
+}
+
+.typeScale {
+  background-color: var(--badge-type-scale-bg);
+  color: var(--badge-type-scale-text);
+  border-color: var(--badge-type-scale-border);
+}
+
+/* Frecuencias */
+.freqDaily {
+  background-color: var(--badge-freq-daily-bg);
+  color: var(--badge-freq-daily-text);
+  border-color: var(--badge-freq-daily-border);
+}
+
+.freqWeekly {
+  background-color: var(--badge-freq-weekly-bg);
+  color: var(--badge-freq-weekly-text);
+  border-color: var(--badge-freq-weekly-border);
+}
+
+.freqMonthly {
+  background-color: var(--badge-freq-monthly-bg);
+  color: var(--badge-freq-monthly-text);
+  border-color: var(--badge-freq-monthly-border);
+}
+
+.freqOccasional {
+  background-color: var(--badge-freq-occasional-bg);
+  color: var(--badge-freq-occasional-text);
+  border-color: var(--badge-freq-occasional-border);
+}

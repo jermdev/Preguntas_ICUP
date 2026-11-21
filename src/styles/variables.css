@@ -1,0 +1,155 @@
+:root {
+  /* Paleta Base y Gradientes */
+  --color-primary: #6366f1;
+  --color-primary-hover: #4f46e5;
+  --color-secondary: #8b5cf6;
+  --gradient-brand: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
+  --gradient-brand-subtle: linear-gradient(135deg, rgba(124, 58, 237, 0.12) 0%, rgba(37, 99, 235, 0.12) 100%);
+  --gradient-card-hover: linear-gradient(135deg, rgba(124, 58, 237, 0.04) 0%, rgba(37, 99, 235, 0.04) 100%);
+
+  /* Tema Claro (Default) */
+  --bg-app: #f8fafc;
+  --bg-app-pattern: radial-gradient(#cbd5e1 1px, transparent 1px);
+  --bg-surface: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.82);
+  --bg-glass-card: rgba(255, 255, 255, 0.75);
+  --bg-glass-input: rgba(255, 255, 255, 0.9);
+  --bg-glass-header: rgba(255, 255, 255, 0.85);
+
+  --border-subtle: rgba(226, 232, 240, 0.8);
+  --border-focus: #6366f1;
+  --border-card-hover: rgba(99, 102, 241, 0.35);
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-inverse: #ffffff;
+
+  /* Sombras Modernas */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+  --shadow-card-hover: 0 20px 30px -10px rgba(99, 102, 241, 0.15), 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+  --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.25);
+
+  /* Colores Semánticos para Badges - Tipo de Pregunta */
+  --badge-type-multiple-bg: rgba(37, 99, 235, 0.1);
+  --badge-type-multiple-text: #1d4ed8;
+  --badge-type-multiple-border: rgba(37, 99, 235, 0.25);
+
+  --badge-type-open-bg: rgba(124, 58, 237, 0.1);
+  --badge-type-open-text: #6d28d9;
+  --badge-type-open-border: rgba(124, 58, 237, 0.25);
+
+  --badge-type-boolean-bg: rgba(16, 185, 129, 0.1);
+  --badge-type-boolean-text: #047857;
+  --badge-type-boolean-border: rgba(16, 185, 129, 0.25);
+
+  --badge-type-scale-bg: rgba(245, 158, 11, 0.12);
+  --badge-type-scale-text: #b45309;
+  --badge-type-scale-border: rgba(245, 158, 11, 0.3);
+
+  /* Colores Semánticos para Badges - Frecuencia */
+  --badge-freq-daily-bg: rgba(239, 68, 68, 0.1);
+  --badge-freq-daily-text: #b91c1c;
+  --badge-freq-daily-border: rgba(239, 68, 68, 0.25);
+
+  --badge-freq-weekly-bg: rgba(14, 165, 233, 0.1);
+  --badge-freq-weekly-text: #0369a1;
+  --badge-freq-weekly-border: rgba(14, 165, 233, 0.25);
+
+  --badge-freq-monthly-bg: rgba(168, 85, 247, 0.1);
+  --badge-freq-monthly-text: #7e22ce;
+  --badge-freq-monthly-border: rgba(168, 85, 247, 0.25);
+
+  --badge-freq-occasional-bg: rgba(100, 116, 139, 0.12);
+  --badge-freq-occasional-text: #334155;
+  --badge-freq-occasional-border: rgba(100, 116, 139, 0.25);
+
+  /* Espaciados */
+  --space-2xs: 0.25rem; /* 4px */
+  --space-xs: 0.5rem;   /* 8px */
+  --space-sm: 0.75rem;  /* 12px */
+  --space-md: 1rem;     /* 16px */
+  --space-lg: 1.5rem;   /* 24px */
+  --space-xl: 2rem;     /* 32px */
+  --space-2xl: 3rem;    /* 48px */
+
+  /* Bordes Redondeados */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Transiciones */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Tipografía */
+  --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.65;
+}
+
+/* Tema Oscuro */
+[data-theme='dark'] {
+  --bg-app: #0b0f19;
+  --bg-app-pattern: radial-gradient(#1e293b 1px, transparent 1px);
+  --bg-surface: #111827;
+  --bg-glass: rgba(17, 24, 39, 0.75);
+  --bg-glass-card: rgba(17, 24, 39, 0.7);
+  --bg-glass-input: rgba(15, 23, 42, 0.85);
+  --bg-glass-header: rgba(11, 15, 25, 0.85);
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-focus: #818cf8;
+  --border-card-hover: rgba(129, 140, 248, 0.45);
+
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-inverse: #0f172a;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+  --shadow-card-hover: 0 20px 30px -10px rgba(99, 102, 241, 0.25), 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 25px rgba(129, 140, 248, 0.3);
+
+  /* Colores Semánticos en Modo Oscuro con Mayor Luminosidad */
+  --badge-type-multiple-bg: rgba(59, 130, 246, 0.16);
+  --badge-type-multiple-text: #93c5fd;
+  --badge-type-multiple-border: rgba(59, 130, 246, 0.3);
+
+  --badge-type-open-bg: rgba(168, 85, 247, 0.16);
+  --badge-type-open-text: #d8b4fe;
+  --badge-type-open-border: rgba(168, 85, 247, 0.3);
+
+  --badge-type-boolean-bg: rgba(16, 185, 129, 0.16);
+  --badge-type-boolean-text: #6ee7b7;
+  --badge-type-boolean-border: rgba(16, 185, 129, 0.3);
+
+  --badge-type-scale-bg: rgba(245, 158, 11, 0.16);
+  --badge-type-scale-text: #fcd34d;
+  --badge-type-scale-border: rgba(245, 158, 11, 0.3);
+
+  --badge-freq-daily-bg: rgba(239, 68, 68, 0.16);
+  --badge-freq-daily-text: #fca5a5;
+  --badge-freq-daily-border: rgba(239, 68, 68, 0.3);
+
+  --badge-freq-weekly-bg: rgba(14, 165, 233, 0.16);
+  --badge-freq-weekly-text: #7dd3fc;
+  --badge-freq-weekly-border: rgba(14, 165, 233, 0.3);
+
+  --badge-freq-monthly-bg: rgba(217, 70, 239, 0.16);
+  --badge-freq-monthly-text: #f0abfc;
+  --badge-freq-monthly-border: rgba(217, 70, 239, 0.3);
+
+  --badge-freq-occasional-bg: rgba(148, 163, 184, 0.16);
+  --badge-freq-occasional-text: #cbd5e1;
+  --badge-freq-occasional-border: rgba(148, 163, 184, 0.3);
+}
